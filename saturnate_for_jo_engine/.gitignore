@@ -1,0 +1,13 @@
+**/*.o
+**/*.bin
+**/*.map
+**/*.elf
+**/*.coff
+**/*.iso
+**/*.cue
+**/*.NYA
+**/*.blend1
+**/*.obj
+**/*.mtl
+**/*.MOT
+**/*.NYA
