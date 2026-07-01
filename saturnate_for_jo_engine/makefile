@@ -5,10 +5,16 @@ COMPILER_DIR=../../Compiler
 
 include $(COMPILER_DIR)/COMMON/jo_engine_makefile
 
-CCFLAGS += -DTT_DEBUG_MODE
-SRCS := $(wildcard src/*.c) \
+#TT_MOT is the version of the animation engine
+TT_MOT ?= 1
+SYSOBJS =
+CCFLAGS += -DTT_DEBUG_MODE -DTT_MOT=$(TT_MOT)
+SRCS := $(wildcard src/debug/*.c) \
+        $(wildcard src/*.c) \
         $(wildcard src/core/*.c) \
-        $(wildcard src/pool_engine/*.c)
+        $(wildcard src/core/format/*.c) \
+        $(wildcard src/pool_engine/*.c) \
+        $(wildcard src/pool_engine/format/*.c)
 OBJS := $(SRCS:.c=.o)
 
 .c.o:
@@ -46,7 +52,7 @@ TOOLDIR := tools
 #OBJ2NYA := $(TOOLDIR)/modelConverter/ModelConverter --no-unwrap
 OBJ2NYA := dotnet --roll-forward LatestMajor $(TOOLDIR)/modelConverter/ModelConverter.dll --no-unwrap
 BLEND2OBJ := blender --background --python $(TOOLDIR)/exportBlenderWavefront.py --
-BLEND2MOT := blender --background --factory-startup --debug-all --python $(TOOLDIR)/exportBlenderAnimationAng.py -- --reverse
+BLEND2MOT := blender --background --factory-startup --debug-all --python $(TOOLDIR)/exportBlenderAnimationAng$(TT_MOT).py -- --reverse
 
 assets: nya mot
 

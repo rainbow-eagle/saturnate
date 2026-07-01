@@ -13,8 +13,8 @@ SRL_USE_SGL_SOUND_DRIVER = 0    # Set to 1 if you want to use SGL sound driver, 
 SRL_ENABLE_FREQ_ANALYSIS = 0    # Set to 1 if you want to enable frequency analysis for CD audio, this will load a DSP program into effect slot 1, SGL sound driver must be enabled
 
 # SGL configuration
-SGL_MAX_VERTICES = 2500         # Number of vertices that can be used
-SGL_MAX_POLYGONS = 1500         # Number of polygons that can be used
+SGL_MAX_VERTICES = 5000         # Number of vertices that can be used
+SGL_MAX_POLYGONS = 4000         # Number of polygons that can be used
 SGL_MAX_EVENTS = 1             # Number of events that can be used
 SGL_MAX_WORKS = 1             # Number of works that can be used 
 
@@ -34,9 +34,19 @@ SOURCES += $(patsubst ./%,%,$(shell find src/ -name '*.cxx'))
 # Include shared makefile
 SDK_ROOT = $(SRL_INSTALL_ROOT)/saturnringlib
 
-CCFLAGS += -DTT_DEBUG_MODE
+# Version of the animation engine
+TT_MOT ?= 1
+CCFLAGS += -DTT_DEBUG_MODE -DTT_MOT=$(TT_MOT)
 
 include $(SDK_ROOT)/shared.mk
+
+ifeq ($(OS),Windows_NT)
+    # On windows, my workarea doesn't work here somehow, but SRL's does
+    SOURCES := $(filter-out src/workarea.c,$(SOURCES))
+else
+    # On linux, SRL's workarea deforms the models somehow (it's funny to see tbh), so I use my own
+    SYSSOURCES := $(filter-out $(SGLLDIR)/../SRC/workarea.c,$(SYSSOURCES))
+endif
 
 # ------------------------------------------------------------
 # Convert 3D models from .blend to .obj to .NYA and from .blend to .MOT
@@ -63,7 +73,7 @@ ASSETSMOT := $(SRC_BLEND:$(ASSETDIR)/%.blend=$(CDASSETDIR)/%.NYA)
 TOOLDIR := tools
 OBJ2NYA := dotnet --roll-forward LatestMajor $(TOOLDIR)/modelConverter/ModelConverter.dll --no-unwrap
 BLEND2OBJ := blender --background --python $(TOOLDIR)/exportBlenderWavefront.py --
-BLEND2MOT := blender --background --python $(TOOLDIR)/exportBlenderAnimationAng.py -- --reverse
+BLEND2MOT := blender --background --python $(TOOLDIR)/exportBlenderAnimationAng$(TT_MOT).py -- --reverse
 
 assets: nya mot
 

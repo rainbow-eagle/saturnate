@@ -2,18 +2,12 @@
 #include <sega_gfs.h>
 #include "file.h"
 #include "memory.h"
-#include "../pool_engine/debug.h"
+#include "../debug/print.h"
 
 void ttOpenFileStream(char* fileName, TTFileStream* stream) {
     stream->tmpBufferedByteCount = 0;
     int32_t fileID = GFS_NameToId(fileName);
     stream->fileHandle = GFS_Open(fileID);
-
-    //Delete that shit
-    // int32_t sctSize, numSct, lastSize;
-    // GFS_GetFileSize(stream->fileHandle, &sctSize, &numSct, &lastSize);
-    // ttDebugMsgLn("Sector size :");
-    // ttDebugIntLn(sctSize);
 }
 
 void ttCloseFileStream(TTFileStream* stream) {
@@ -23,7 +17,7 @@ void ttCloseFileStream(TTFileStream* stream) {
 void ttReadBytes(TTFileStream* stream, uint32_t byteCount, uint8_t* buffer) {
     uint8_t* bufferPtr = buffer;
     if(stream->tmpBufferedByteCount) { // if we still have pre-read stuff
-        uint8_t* tmpBufferPtr = stream->tmpBuffer +(TT_SECTOR_SIZE - stream->tmpBufferedByteCount); //the pre-read stuff occupies the end of the buffer
+        uint8_t* tmpBufferPtr = stream->tmpBuffer + (TT_SECTOR_SIZE - stream->tmpBufferedByteCount); //the pre-read stuff occupies the end of the buffer
         if(byteCount > stream->tmpBufferedByteCount) {
             ttCopyBytes(bufferPtr, tmpBufferPtr, stream->tmpBufferedByteCount);
             bufferPtr += stream->tmpBufferedByteCount;
@@ -47,6 +41,30 @@ void ttReadBytes(TTFileStream* stream, uint32_t byteCount, uint8_t* buffer) {
     uint32_t lastSectorByteCount = byteCount % TT_SECTOR_SIZE;
     stream->tmpBufferedByteCount = TT_SECTOR_SIZE - lastSectorByteCount;
     ttCopyBytes(bufferPtr, stream->tmpBuffer, lastSectorByteCount);
+
+    return;
+}
+
+void ttSkipBytes(TTFileStream* stream, uint32_t byteCount) {
+    if(stream->tmpBufferedByteCount) { // if we still have pre-read stuff
+        uint8_t* tmpBufferPtr = stream->tmpBuffer + (TT_SECTOR_SIZE - stream->tmpBufferedByteCount); //the pre-read stuff occupies the end of the buffer
+        if(byteCount > stream->tmpBufferedByteCount) {
+            byteCount -= stream->tmpBufferedByteCount;
+        }
+        else {
+            stream->tmpBufferedByteCount -= byteCount;
+            tmpBufferPtr+=byteCount;
+            return;
+        }
+    }
+
+    int32_t startSectorCount = ((TT_SECTOR_SIZE == 2048)? byteCount >> 11 : byteCount / TT_SECTOR_SIZE);
+    if(startSectorCount > 0) // Skip the first sectors...
+        GFS_Seek(stream->fileHandle, startSectorCount, GFS_SEEK_CUR);
+    //... and read the last sector in the buffer, to then skip only the requested part...
+    GFS_Fread(stream->fileHandle, 1, stream->tmpBuffer, TT_SECTOR_SIZE);
+    uint32_t lastSectorByteCount = byteCount % TT_SECTOR_SIZE;
+    stream->tmpBufferedByteCount = TT_SECTOR_SIZE - lastSectorByteCount;
 
     return;
 }

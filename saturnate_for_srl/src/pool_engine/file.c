@@ -29,7 +29,7 @@ bool ttFileExists(char* fileName) {
 // }
 
 // #include <sgl_cd.h>
-// #include "debug.h"
+// #include "../debug/print.h"
 
 // int32_t dirWork[SLCD_WORK_SIZE(MAX_FILE_COUNT_PER_FOLDER)];
 

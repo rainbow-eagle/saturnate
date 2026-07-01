@@ -7,16 +7,17 @@
 */
 
 #include "jo/sgl_prototypes.h"
+// #include "workarea.h"
 
 #define		SystemWork		0x060ffc00		/* System Variable Address */
-#define		SystemSize		(0x06100000-0x060ffc00)		/* System Variable Size */
+#define		SystemSize		(0x06100000-SystemWork)		/* System Variable Size */
 /* Start and end symbols of the .bss section specified in sl.lnk */
 extern Uint32 _bstart, _bend;
-extern char _heap_end;
+extern Uint32 _ttlowram_start, _ttlowram_end;
 /* */
 extern void ss_main( void );
 
-int	main( void )
+void	main( void )
 {
     Uint8	*dst;
     Uint32	i;
@@ -34,5 +35,4 @@ int	main( void )
 
     /* Application Call */
     ss_main();
-    return 0;
 }

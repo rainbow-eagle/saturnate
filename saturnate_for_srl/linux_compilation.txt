@@ -1,0 +1,196 @@
+ ./compile.bat 
+No target specified! Defaulting to debug...
+Building debug...
+rm -f ../../saturnringlib/../modules/sgl/LIB/../SRC/*.o
+rm -f src/workarea.o src/main.o src/pool_engine/file.o src/pool_engine/model_loader.o src/pool_engine/format/animation0.o src/pool_engine/format/animation1.o src/base_viewer.o src/stress_test_settings.o src/model_viewer.o src/core/file.o src/core/memory.o src/core/model_loader.o src/core/format/animation0.o src/core/format/animation1.o src/debug/menu.o src/debug/print.o src/menu.o src/cinit.o src/stress_test.o ./BuildDrop/saturnate.elf ./BuildDrop/saturnate.iso ./BuildDrop/saturnate.map ./cd/data/0.bin
+rm -f 
+rm -rf ./BuildDrop/
+****** No pre build steps ******
+sh2eb-elf-gcc src/workarea.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/workarea.o
+sh2eb-elf-gcc src/main.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/main.o
+sh2eb-elf-gcc src/pool_engine/file.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/pool_engine/file.o
+sh2eb-elf-gcc src/pool_engine/model_loader.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/pool_engine/model_loader.o
+src/pool_engine/model_loader.c: In function 'ttLoadNYAMeshesInPool':
+src/pool_engine/model_loader.c:43:40: warning: comparison of integer expressions of different signedness: 'uint32_t' {aka 'long unsigned int'} and 'int32_t' {aka 'long int'} [-Wsign-compare]
+   43 |         if(__builtin_expect(modelCount >= pools->maxModelCount, 0))
+      |                                        ^~
+src/pool_engine/model_loader.c:62:39: warning: implicit conversion from 'TTMeshLoadStatus' to 'TTMeshPoolLoadStatus' [-Wenum-conversion]
+   62 |     TTMeshPoolLoadStatus returnCode = ttLoadNYAMeshes(fileName, &meshBuffer);//the return only works because I manually mapped the error code from core to pool
+      |                                       ^~~~~~~~~~~~~~~
+sh2eb-elf-gcc src/pool_engine/format/animation0.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/pool_engine/format/animation0.o
+src/pool_engine/format/animation0.c: In function 'ttLoadAnimationInPool0':
+src/pool_engine/format/animation0.c:56:51: warning: comparison of integer expressions of different signedness: 'uint32_t' {aka 'long unsigned int'} and 'int32_t' {aka 'long int'} [-Wsign-compare]
+   56 |         if(__builtin_expect(animationSetSpecCount >= animationPools->maxAnimationSetCount, 0))
+      |                                                   ^~
+src/pool_engine/format/animation0.c:75:12: warning: implicit conversion from 'TTAnimationLoadStatus' to 'TTAnimationPoolLoadStatus' [-Wenum-conversion]
+   75 |     return returnValue;
+      |            ^~~~~~~~~~~
+src/pool_engine/format/animation0.c: In function 'ttSetAnimatedInstanceCountInPool0':
+src/pool_engine/format/animation0.c:130:30: warning: comparison of integer expressions of different signedness: 'uint32_t' {aka 'long unsigned int'} and 'int32_t' {aka 'long int'} [-Wsign-compare]
+  130 |         if(accumulatedOffset >= pools->maxAnimatedInstanceCount)
+      |                              ^~
+sh2eb-elf-gcc src/pool_engine/format/animation1.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/pool_engine/format/animation1.o
+src/pool_engine/format/animation1.c: In function 'ttLoadAnimationInPool1':
+src/pool_engine/format/animation1.c:64:51: warning: comparison of integer expressions of different signedness: 'uint32_t' {aka 'long unsigned int'} and 'int32_t' {aka 'long int'} [-Wsign-compare]
+   64 |         if(__builtin_expect(animationSetSpecCount >= animationPools->maxAnimationSetCount, 0))
+      |                                                   ^~
+src/pool_engine/format/animation1.c:103:12: warning: implicit conversion from 'TTAnimationLoadStatus' to 'TTAnimationPoolLoadStatus' [-Wenum-conversion]
+  103 |     return returnValue;
+      |            ^~~~~~~~~~~
+src/pool_engine/format/animation1.c: In function 'ttSetAnimatedInstanceCountInPool1':
+src/pool_engine/format/animation1.c:169:30: warning: comparison of integer expressions of different signedness: 'uint32_t' {aka 'long unsigned int'} and 'int32_t' {aka 'long int'} [-Wsign-compare]
+  169 |         if(accumulatedOffset >= pools->maxAnimatedInstanceCount)
+      |                              ^~
+sh2eb-elf-gcc src/base_viewer.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/base_viewer.o
+src/base_viewer.c: In function 'listNYAFiles':
+src/base_viewer.c:59:27: warning: comparison of integer expressions of different signedness: 'uint32_t' {aka 'long unsigned int'} and 'int32_t' {aka 'long int'} [-Wsign-compare]
+   59 |     for(uint32_t i = 2; i < gfsDirTbl.ndir; i++)
+      |                           ^
+src/base_viewer.c: In function 'loadModel':
+src/base_viewer.c:83:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   83 |             ttDebugMsgLn(msg);
+      |             ^~~~~~~~~~~~~~~~~
+src/base_viewer.c:84:9: note: here
+   84 |         case OK:;//weird semicolon that I need to add to have it run on Jo Engine's compiler
+      |         ^~~~
+src/base_viewer.c:97:21: warning: 'statusMessage' may be used uninitialized [-Wmaybe-uninitialized]
+   97 |                     snprintf(msg, sizeof(msg), "%s failed: %s overflow %-39s", nyaFileName, statusMessage, "");
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/base_viewer.c:89:27: note: 'statusMessage' was declared here
+   89 |                     char* statusMessage;
+      |                           ^~~~~~~~~~~~~
+sh2eb-elf-gcc src/stress_test_settings.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/stress_test_settings.o
+src/stress_test_settings.c: In function 'initSettingsStatistics':
+src/stress_test_settings.c:56:34: warning: comparison of integer expressions of different signedness: 'int' and 'uint32_t' {aka 'long unsigned int'} [-Wsign-compare]
+   56 |     for(int modelID = 0; modelID < modelFileCount; nyaMetaDataPtr++, motMetaDataPtr++, modelID++) {
+      |                                  ^
+src/stress_test_settings.c: In function 'updateStats':
+src/stress_test_settings.c:153:9: warning: 'currentModelVRAMCellUsage' may be used uninitialized [-Wmaybe-uninitialized]
+  153 |         snprintf(msg, sizeof(msg), "Model cost: %6d  VRAM cost: %6d", currentModelTotalRAMUsage, currentModelVRAMCellUsage);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/stress_test_settings.c:113:14: note: 'currentModelVRAMCellUsage' was declared here
+  113 |     uint32_t currentModelVRAMCellUsage;
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/stress_test_settings.c:153:9: warning: 'currentModelTotalRAMUsage' may be used uninitialized [-Wmaybe-uninitialized]
+  153 |         snprintf(msg, sizeof(msg), "Model cost: %6d  VRAM cost: %6d", currentModelTotalRAMUsage, currentModelVRAMCellUsage);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/stress_test_settings.c:114:14: note: 'currentModelTotalRAMUsage' was declared here
+  114 |     uint32_t currentModelTotalRAMUsage;
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/stress_test_settings.c:155:9: warning: 'currentAnimationTotalRAMUsage' may be used uninitialized [-Wmaybe-uninitialized]
+  155 |         snprintf(msg, sizeof(msg), "Animation cost: %6d", currentAnimationTotalRAMUsage);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/stress_test_settings.c:115:14: note: 'currentAnimationTotalRAMUsage' was declared here
+  115 |     uint32_t currentAnimationTotalRAMUsage;
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sh2eb-elf-gcc src/model_viewer.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/model_viewer.o
+src/model_viewer.c: In function 'initModelViewer':
+src/model_viewer.c:53:22: warning: comparison of integer expressions of different signedness: 'int' and 'uint32_t' {aka 'long unsigned int'} [-Wsign-compare]
+   53 |     for(int i = 0; i < modelFileCount; i++)
+      |                      ^
+sh2eb-elf-gcc src/core/file.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/core/file.o
+src/core/file.c: In function 'ttReadBytes':
+src/core/file.c:21:22: warning: comparison of integer expressions of different signedness: 'uint32_t' {aka 'long unsigned int'} and 'int32_t' {aka 'long int'} [-Wsign-compare]
+   21 |         if(byteCount > stream->tmpBufferedByteCount) {
+      |                      ^
+src/core/file.c: In function 'ttSkipBytes':
+src/core/file.c:51:22: warning: comparison of integer expressions of different signedness: 'uint32_t' {aka 'long unsigned int'} and 'int32_t' {aka 'long int'} [-Wsign-compare]
+   51 |         if(byteCount > stream->tmpBufferedByteCount) {
+      |                      ^
+sh2eb-elf-gcc src/core/memory.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/core/memory.o
+sh2eb-elf-gcc src/core/model_loader.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/core/model_loader.o
+src/core/model_loader.c: In function 'ttLoadNYAMeshes':
+src/core/model_loader.c:186:12: warning: implicit conversion from 'enum Judgement' to 'TTMeshLoadStatus' [-Wenum-conversion]
+  186 |     return OK;
+      |            ^~
+sh2eb-elf-gcc src/core/format/animation0.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/core/format/animation0.o
+src/core/format/animation0.c: In function 'ttLoadMOTAnimation0':
+src/core/format/animation0.c:59:12: warning: implicit conversion from 'enum Judgement' to 'TTAnimationLoadStatus' [-Wenum-conversion]
+   59 |     return OK;
+      |            ^~
+sh2eb-elf-gcc src/core/format/animation1.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/core/format/animation1.o
+src/core/format/animation1.c: In function 'ttLoadMOTAnimation1':
+src/core/format/animation1.c:74:12: warning: implicit conversion from 'enum Judgement' to 'TTAnimationLoadStatus' [-Wenum-conversion]
+   74 |     return OK;
+      |            ^~
+sh2eb-elf-gcc src/debug/menu.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/debug/menu.o
+sh2eb-elf-gcc src/debug/print.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/debug/print.o
+sh2eb-elf-gcc src/menu.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/menu.o
+src/menu.c: In function 'updateMenu':
+src/menu.c:178:58: warning: comparison of integer expressions of different signedness: 'int16_t' {aka 'short int'} and 'uint32_t' {aka 'long unsigned int'} [-Wsign-compare]
+  178 |         if(menu.menuItems[BACKGROUND_COLOR].currentValue != currentBackgroundColor)
+      |                                                          ^~
+src/menu.c: In function 'setBackgroundColor':
+src/menu.c:141:5: warning: 'color' may be used uninitialized [-Wmaybe-uninitialized]
+  141 |     slBack1ColSet((void*) VDP2_VRAM_A1, color);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/menu.c:132:14: note: 'color' was declared here
+  132 |     uint32_t color;
+      |              ^~~~~
+In function 'setBackgroundColor',
+    inlined from 'updateMenu' at src/menu.c:179:13:
+src/menu.c:141:5: warning: 'color' may be used uninitialized [-Wmaybe-uninitialized]
+  141 |     slBack1ColSet((void*) VDP2_VRAM_A1, color);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/menu.c: In function 'updateMenu':
+src/menu.c:132:14: note: 'color' was declared here
+  132 |     uint32_t color;
+      |              ^~~~~
+sh2eb-elf-gcc src/cinit.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/cinit.o
+sh2eb-elf-gcc src/stress_test.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o src/stress_test.o
+sh2eb-elf-gcc ../../saturnringlib/../modules/sgl/LIB/../SRC/workarea.c -DTT_DEBUG_MODE -DTT_MOT=1 -DSRL_FRAMERATE=0 -DDEBUG -DSRL_MODE_NTSC -DSRL_MAX_TEXTURES=100 -DSRL_MAX_CD_BACKGROUND_JOBS=1 -DSRL_MAX_CD_FILES=256 -DSRL_MAX_CD_RETRIES=5 -DSRL_DEBUG_MAX_PRINT_LENGTH=45 -DSRL_DEBUG_MAX_LOG_LENGTH=80  -DSGL_MAX_VERTICES=5000 -DSGL_MAX_POLYGONS=4000 -DSGL_MAX_EVENTS=1 -DSGL_MAX_WORKS=1 -W -m2 -c -O2 -Wno-strict-aliasing -I../../saturnringlib/../modules/dummy -I../../saturnringlib/../modules/SaturnMathPP -I../../saturnringlib/../modules/sgl/INC -I../../saturnringlib/../modules/danny/INC -I../../saturnringlib/../modules/tlsf -I../../saturnringlib  -std=c2x -o ../../saturnringlib/../modules/sgl/LIB/../SRC/workarea.o
+****** Info ******
+Maximum textures : 100          
+Maximum vertices : 5000         
+Maximum polygons : 4000         
+Maximum events : 1             
+Maximum work : 1             
+Log level selected : NONE
+Maximum Log length : 80
+******************
+mkdir -p ./cd/music
+mkdir -p ./cd/data
+mkdir -p ./BuildDrop
+test -f ./cd/data/ABS.TXT || echo "NOT Abstracted by SEGA" >> ./cd/data/ABS.TXT
+test -f ./cd/data/BIB.TXT || echo "NOT Bibliographiced by SEGA" >> ./cd/data/BIB.TXT
+test -f ./cd/data/CPY.TXT || touch ./cd/data/CPY.TXT
+sh2eb-elf-gcc -m2 -L../../saturnringlib/../modules/sgl/LIB -Xlinker -T../../saturnringlib/../modules/sgl/sgl.linker -Xlinker -Map -Xlinker ./BuildDrop/saturnate.map -Xlinker -e -Xlinker ___Start -nostartfiles -specs=nosys.specs  src/workarea.o src/main.o src/pool_engine/file.o src/pool_engine/model_loader.o src/pool_engine/format/animation0.o src/pool_engine/format/animation1.o src/base_viewer.o src/stress_test_settings.o src/model_viewer.o src/core/file.o src/core/memory.o src/core/model_loader.o src/core/format/animation0.o src/core/format/animation1.o src/debug/menu.o src/debug/print.o src/menu.o src/cinit.o src/stress_test.o ../../saturnringlib/../modules/sgl/LIB/LIBCPK.A ../../saturnringlib/../modules/sgl/LIB/SEGA_SYS.A ../../saturnringlib/../modules/sgl/LIB/LIBCD.A ../../saturnringlib/../modules/sgl/LIB/LIBSGL.A -o ./BuildDrop/saturnate.elf
+sh2eb-elf-objcopy -O binary ./BuildDrop/saturnate.elf ./cd/data/0.bin
+xorrisofs --norock -quiet -sysid "SEGA SATURN" -volid "SaturnApp" -volset "SaturnApp" \
+-publisher "SEGA ENTERPRISES, LTD." -preparer "SEGA ENTERPRISES, LTD." -appid "SaturnApp" \
+-abstract "./cd/data/ABS.TXT" -copyright "./cd/data/CPY.TXT" -biblio "./cd/data/BIB.TXT" -generic-boot ../../saturnringlib/../modules/sgl/IP.BIN \
+-full-iso9660-filenames -o ./BuildDrop/saturnate.iso ./cd/data 
+xorriso 1.5.6 : RockRidge filesystem manipulator, libburnia project.
+
+dd if=./BuildDrop/saturnate.iso of=./BuildDrop/saturnate.bin bs=2048
+2648+0 enregistrements lus
+2648+0 enregistrements écrits
+5423104 octets (5,4 MB, 5,2 MiB) copiés, 0,013962 s, 388 MB/s
+echo 'FILE "saturnate.bin" BINARY' > ./BuildDrop/saturnate.cue
+echo '  TRACK 01 MODE1/2048' >> ./BuildDrop/saturnate.cue
+echo '    INDEX 01 00:00:00' >> ./BuildDrop/saturnate.cue
+track=2; \
+total_size=$(stat -c%s "./BuildDrop/saturnate.bin"); \
+for i in ; do \
+	sectors=$((total_size / 2352)); \
+	minutes=$((sectors / (60 * 75))); \
+	seconds=$((sectors % (60 * 75) / 75)); \
+	frames=$((sectors % 75)); \
+	echo '  TRACK' $(printf "%02d" $track) 'AUDIO' >> ./BuildDrop/saturnate.cue; \
+	echo '    INDEX 01' $(printf "%02d:%02d:%02d" $minutes $seconds $frames) >> ./BuildDrop/saturnate.cue; \
+	size=$(stat -c%s "$i"); \
+	padding=$((2352 - (size % 2352))); \
+	if [ $padding -ne 2352 ]; then \
+		dd if=/dev/zero bs=1 count=$padding of=padding.raw status=none; \
+		cat "$i" padding.raw >> ./BuildDrop/saturnate.bin; \
+		rm -f padding.raw; \
+		total_size=$((total_size + size + padding)); \
+	else \
+		cat "$i" >> ./BuildDrop/saturnate.bin; \
+		total_size=$((total_size + size)); \
+	fi; \
+	track=$((track + 1)); \
+done
+rm -f 
+****** No post build steps ******
+

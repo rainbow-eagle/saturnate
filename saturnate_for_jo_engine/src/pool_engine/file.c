@@ -1,4 +1,4 @@
-#include "jo/sgl_prototypes.h"
+#include <jo/sgl_prototypes.h>
 #include "file.h"
 
 char gfsWork[GFS_WORK_SIZE(MAX_BACKGROUND_JOBS)] __attribute__((aligned(4)));
@@ -29,7 +29,7 @@ Bool ttFileExists(char* fileName) {
 // }
 
 // #include <sgl_cd.h>
-// #include "debug.h"
+// #include "../debug/print.h"
 
 // Sint32 dirWork[SLCD_WORK_SIZE(MAX_FILE_COUNT_PER_FOLDER)];
 

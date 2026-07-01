@@ -1,9 +1,9 @@
 #ifndef TT_CORE_FILE_H
 #define TT_CORE_FILE_H
-#include "jo/sgl_prototypes.h"
+#include <jo/sgl_prototypes.h>
 
 /**
- * @defgroup FileSystem File
+ * @defgroup FileSystem File System
  * @brief Functions to read files.
  * 
  * GFS_Init() is a necessary initialization step to use the API.
@@ -55,7 +55,7 @@ void ttCloseFileStream(TTFileStream* stream);
 
 /**
  * @brief Reads bytes from an opened stream to a file.
- * The stream must be opened with ttOpenFileStream.
+ * The stream must be opened with ttOpenFileStream().
  * After usage, it must be closed with ttCloseFileStream().
  * 
  * @param[in,out] stream The opened stream from which bytes are read.
@@ -64,6 +64,8 @@ void ttCloseFileStream(TTFileStream* stream);
  * @see GFS_Init(), ttOpenFileStream(), ttCloseFileStream()
  */
 void ttReadBytes(TTFileStream* stream, Uint32 byteCount, Uint8* buffer);
+
+void ttSkipBytes(TTFileStream* stream, Uint32 byteCount);
 
 /**
  * @brief Load the entire content of a file into a given buffer.
